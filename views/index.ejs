@@ -8,7 +8,28 @@
 </head>
 <body>
     <main>
-        <h1>hello</h1>
+        <ul>
+     <h2>You have  <%=Results.length%> characters</h2>
+      
+      <%Results.forEach(element=>{%>
+        <li>
+           <h1><%=element.name%></h1>
+           <h1><%=element.house%></h1>
+           <h1><%=element.patronus%></h1>
+           <h1><%=element.is_alive%></h1>
+           <form action="/favorite-character" method="POST">
+            <input type="hidden" name="name" value="<%=element.name%>">
+            <input type="hidden" name="house" value="<%=element.house%>">
+            <input type="hidden" name="patronus" value="<%=element.patronus%>">
+            <input type="hidden" name="is_alive" value="<%=element.is_alive%>">
+               <button>Add To Favorites</button>
+           </form>
+            
+        </li>
+        <%})%>
+    </ul>
+
+
     </main>
     
 </body>
